@@ -1,0 +1,16 @@
+# Configuração LOMUZ - Integração MediaMTX + Hono
+paths:
+  live: # Define o prefixo (ex: rtmp://servidor/live/CHAVE)
+    # Executa quando alguém tenta transmitir
+    # $MTX_PATH contém o nome da stream (a sua stream_key)
+    on_publish: curl -X POST http://api.lomuz.com/api/webhooks/mtx/auth -d "path=$MTX_PATH"
+    
+    # Executa quando a transmissão cai ou é encerrada
+    on_unpublish: curl -X POST http://api.lomuz.com/api/webhooks/mtx/offline -d "path=$MTX_PATH"
+
+# Endereços padrão
+rtmp: yes
+rtmpAddress: :1935
+
+hls: yes
+hlsAddress: :8888

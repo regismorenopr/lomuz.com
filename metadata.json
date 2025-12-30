@@ -1,0 +1,9 @@
+{
+  "name": "Lomuz",
+  "description": "Sistema SaaS global de streaming inteligente com arquitetura offline-first e governança de rede.",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone",
+    "camera"
+  ]
+}

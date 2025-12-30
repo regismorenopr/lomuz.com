@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lomuz - Streaming Exclusivo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: ['class', '[data-theme="dark"]'], 
+        theme: {
+          extend: {
+            colors: {
+              lomuz: {
+                bg: '#020617',
+                'bg-alt': '#08080E',
+                surface: '#0D0D16',
+                'surface-hover': '#141421',
+                border: 'rgba(255, 255, 255, 0.05)',
+                
+                // Redefinição Monocromática Púrpura
+                imperial: '#7C3AED',   // Roxo Primário
+                amethyst: '#6D28D9',   // Roxo Médio
+                accent: '#A855F7',     // Roxo Vibrante (Substituiu o Gold)
+                'accent-dim': '#4C1D95',// Roxo Profundo
+                
+                // Text Semantic
+                text: '#F8FAFC',
+                muted: '#94A3B8',
+                subtle: '#475569',
+                
+                // Form Elements
+                input: 'rgba(255, 255, 255, 0.02)'
+              }
+            },
+            backgroundImage: {
+              'premium-gradient': 'linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%)',
+              'accent-gradient': 'linear-gradient(135deg, #A855F7 0%, #7C3AED 100%)',
+              'depth-gradient': 'linear-gradient(180deg, #020617 0%, #080810 100%)',
+              'glass-panel': 'rgba(13, 13, 22, 0.7)'
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            boxShadow: {
+              'huge': '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+              'glow': '0 0 30px rgba(124, 58, 237, 0.25)',
+              'glow-accent': '0 0 25px rgba(168, 85, 247, 0.3)',
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-0: #020617;
+        --bg-1: #08080E;
+        --surface-0: #0D0D16;
+        --border: rgba(255, 255, 255, 0.05);
+        --text-0: #F8FAFC;
+        --imperial: #7C3AED;
+        --accent: #A855F7;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-0);
+        color: var(--text-0);
+        margin: 0;
+      }
+
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+      .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+      .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+      .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(124, 58, 237, 0.1); border-radius: 10px; }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(124, 58, 237, 0.3); }
+
+      * { transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease; }
+      
+      input[type="range"] {
+        -webkit-appearance: none;
+        appearance: none;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 999px;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 14px;
+        height: 14px;
+        background: white;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+    "lucide-react": "https://esm.sh/lucide-react@0.344.0",
+    "@neondatabase/serverless": "https://esm.sh/@neondatabase/serverless@^1.0.2",
+    "bcryptjs": "https://esm.sh/bcryptjs@^3.0.3",
+    "hono/": "https://esm.sh/hono@^4.11.1/",
+    "hono": "https://esm.sh/hono@^4.11.1",
+    "nanoid": "https://esm.sh/nanoid@^5.1.6"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

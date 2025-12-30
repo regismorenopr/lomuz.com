@@ -1,0 +1,32 @@
+###############################################
+# LOMUZ GLOBAL EDGE CONFIG (v2.1)
+###############################################
+
+# Ingestão via RTMP (OBS/Encoder)
+rtmp: yes
+rtmpAddress: :1935
+
+# Entrega via HLS (Ouvintes via Cloudflare)
+hls: yes
+hlsAddress: :8888
+hlsVariant: lowLatency
+hlsSegmentCount: 3
+hlsSegmentDuration: 2s
+hlsPartDuration: 200ms
+hlsAllowOrigin: "*" # Permitir CORS para o player web
+
+# Segurança e Autenticação via Webhook
+paths:
+  all:
+    # O MediaMTX envia o header de segurança para o backend Lomuz
+    publishHeader: X-Lomuz-Secret: SUAPERSONALIZADASECRETA
+    on_publish: curl -X POST https://api.lomuz.com/api/webhooks/mtx/auth -d "path=$MTX_PATH&token=$MTX_QUERY"
+    on_unpublish: curl -X POST https://api.lomuz.com/api/webhooks/mtx/offline -d "path=$MTX_PATH"
+
+# API de Telemetria (Consumida pelo Backend)
+api: yes
+apiAddress: :9997
+
+# Otimização de Rede
+readBufferCount: 2048
+udpMaxPayloadSize: 1472
